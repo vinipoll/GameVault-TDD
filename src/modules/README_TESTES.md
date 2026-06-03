@@ -2,8 +2,6 @@
 
 Suíte automatizada com **Vitest** + **Supertest** seguindo TDD. Os testes ficam ao lado do código que testam, em pastas `__tests__/` dentro de cada módulo (como pedido pela disciplina).
 
-> **TL;DR:** `npm install && npm test` → 91 testes em ~6 segundos.
-
 ---
 
 ## 1. Estrutura
