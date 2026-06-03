@@ -129,6 +129,7 @@ npm run test:ui             # UI do Vitest no browser
 ## 📑 Documentação
 
 - 🧪 [Guia de testes](src/modules/README_TESTES.md) — como rodar e estender
+- 🧪 [Guia de testes](RELATORIO.md) — relatório completo do projeto
 
 ## 🎯 Sistema de recomendação
 
