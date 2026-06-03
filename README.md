@@ -65,9 +65,6 @@ gamevault/
 │   ├── index.html
 │   ├── css/style.css
 │   └── js/app.js
-├── docs/
-│   ├── Relatorio_GameVault.docx     # Relatório acadêmico completo
-│   └── api-examples.md              # Exemplos de uso da API
 ├── database.sql                     # Schema MySQL de referência
 ├── vitest.config.js
 ├── vitest.setup.js
@@ -109,8 +106,6 @@ npm run dev          # com nodemon (auto-reload)
 npm start
 ```
 
-🎮 Frontend disponível em `http://localhost:3000`
-🔌 API em `http://localhost:3000/api`
 
 ### Usuários de seed
 
@@ -133,8 +128,6 @@ npm run test:ui             # UI do Vitest no browser
 
 ## 📑 Documentação
 
-- 📄 [**Relatório acadêmico** (.docx)](docs/Relatorio_GameVault.docx) — objetivo, escopo, RFs, RNFs, casos de uso, plano de testes
-- 🔌 [Exemplos da API](docs/api-examples.md) — todas as rotas com `curl`
 - 🧪 [Guia de testes](src/modules/README_TESTES.md) — como rodar e estender
 
 ## 🎯 Sistema de recomendação
