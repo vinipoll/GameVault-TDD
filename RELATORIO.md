@@ -1,6 +1,5 @@
 # Relatório de TDD — GameVault
-
-**Disciplina:** Test-Driven Development  
+ 
 **Projeto:** GameVault — Catálogo de Jogos Digitais  
 **Tecnologias:** Node.js · Express · Sequelize · Vitest
 

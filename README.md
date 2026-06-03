@@ -152,4 +152,4 @@ O método `GameService.recommendFor(userId)` implementa um algoritmo simples bas
 
 ## 📜 Licença
 
-Projeto acadêmico — disciplina de Test-Driven Development (TDD).
+Projeto acadêmico — disciplina de Teste de Software.
