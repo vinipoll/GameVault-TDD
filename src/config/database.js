@@ -1,10 +1,4 @@
-/**
- * Configuração do Sequelize com MySQL.
- *
- * Nota: nos testes automatizados (Vitest), os models são mockados com
- * vi.mock(), de modo que esta conexão real não é estabelecida durante
- * a suíte. Em desenvolvimento e produção, requer MySQL rodando.
- */
+/* Configuração do Sequelize com MySQL.*/
 import 'dotenv/config';
 import { Sequelize } from 'sequelize';
 

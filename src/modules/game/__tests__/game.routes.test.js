@@ -23,7 +23,7 @@ const adminToken = signToken({ id: 9, username: 'a', email: 'a@x.com', role: 'ad
 
 beforeEach(() => vi.clearAllMocks());
 
-// ── GAMES ────────────────────────────────────────────────────────────────
+// ── GAMES 
 describe('GET /api/games', () => {
   it('200: lista pública com avgRating calculado', async () => {
     Game.findAll.mockResolvedValue([
@@ -101,7 +101,7 @@ describe('POST /api/games (admin)', () => {
   });
 });
 
-// ── FAVORITOS ────────────────────────────────────────────────────────────
+// ── FAVORITOS 
 describe('POST /api/favorites/:gameId (toggle)', () => {
   it('401 sem token', async () => {
     const res = await request(app).post('/api/favorites/1');
@@ -143,7 +143,7 @@ describe('POST /api/favorites/:gameId (toggle)', () => {
   });
 });
 
-// ── REVIEWS ──────────────────────────────────────────────────────────────
+// ── REVIEWS 
 describe('POST /api/reviews/game/:gameId', () => {
   it('400 com rating fora do intervalo', async () => {
     const res = await request(app)
@@ -193,7 +193,7 @@ describe('POST /api/reviews/game/:gameId', () => {
   });
 });
 
-// ── CATEGORIES ───────────────────────────────────────────────────────────
+// ── CATEGORIES 
 describe('POST /api/categories (admin)', () => {
   it('201 com slug autogerado a partir do nome', async () => {
     Category.findOne.mockResolvedValue(null);

@@ -1,8 +1,6 @@
-/**
- * Middlewares de autenticação.
- *
- * - authMiddleware  → exige token JWT válido; popula req.user
- * - adminMiddleware → exige authMiddleware + role === 'admin'
+/*
+ - authMiddleware  → exige token JWT válido; popula req.user
+ - adminMiddleware → exige authMiddleware + role === 'admin'
  */
 import jwt from 'jsonwebtoken';
 

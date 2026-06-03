@@ -1,13 +1,3 @@
--- ╔══════════════════════════════════════════════════════════════════════╗
--- ║  GameVault — Schema MySQL                                              ║
--- ║                                                                        ║
--- ║  NOTA: o Sequelize cria todas estas tabelas automaticamente via         ║
--- ║  sequelize.sync() ao iniciar o servidor. Este arquivo é apenas para     ║
--- ║  referência ou inicialização manual.                                    ║
--- ║                                                                        ║
--- ║  Para popular dados de exemplo: `npm run seed`                          ║
--- ╚══════════════════════════════════════════════════════════════════════╝
-
 CREATE DATABASE IF NOT EXISTS gamevault
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

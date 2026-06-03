@@ -1,9 +1,3 @@
-/**
- * Configuração da aplicação Express.
- *
- * Separado de server.js para permitir testes de integração com Supertest
- * sem necessidade de abrir uma porta.
- */
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';

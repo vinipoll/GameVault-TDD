@@ -1,8 +1,3 @@
-/**
- * Ponto de entrada do servidor GameVault.
- * - Sincroniza models com o banco
- * - Sobe a aplicação Express na porta configurada
- */
 import createApp from './app.js';
 import { sequelize } from './models/index.js';
 

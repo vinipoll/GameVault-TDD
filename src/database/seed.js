@@ -1,9 +1,4 @@
-/**
- * Seed: popula o banco com categorias, jogos e usuários de exemplo.
- * Uso: `npm run seed`
- *
- * ⚠️ Faz `sync({ force: true })` — recria as tabelas e apaga dados existentes.
- */
+/*Seed: popula o banco com categorias, jogos e usuários de exemplo. */
 import bcrypt from 'bcryptjs';
 import { sequelize, User, Category, Game, Review, Favorite } from '../models/index.js';
 
@@ -11,7 +6,7 @@ async function seed() {
   console.log('🌱 Iniciando seed...');
   await sequelize.sync({ force: true });
 
-  // ── Usuários ────────────────────────────────────────────────────────────
+  // ── Usuários 
   const passwordHash = await bcrypt.hash('senha123', 10);
   const [admin, alice, bob] = await User.bulkCreate([
     { username: 'admin', email: 'admin@gamevault.com', passwordHash, role: 'admin' },
@@ -19,7 +14,7 @@ async function seed() {
     { username: 'bob',   email: 'bob@example.com',     passwordHash },
   ]);
 
-  // ── Categorias ──────────────────────────────────────────────────────────
+  // ── Categorias 
   const cats = await Category.bulkCreate([
     { name: 'RPG',       slug: 'rpg',       icon: '⚔️' },
     { name: 'FPS',       slug: 'fps',       icon: '🎯' },
@@ -32,7 +27,7 @@ async function seed() {
   ]);
   const C = Object.fromEntries(cats.map(c => [c.slug, c.id]));
 
-  // ── Jogos ───────────────────────────────────────────────────────────────
+  // ── Jogos 
   const games = await Game.bulkCreate([
     { title: 'Elden Ring',                     developer: 'FromSoftware',  publisher: 'Bandai Namco', releaseYear: 2022, price: 249.90, categoryId: C.rpg,
       description: 'RPG de mundo aberto em Lands Between. Sucessor espiritual da série Dark Souls com exploração massiva.',
@@ -72,7 +67,7 @@ async function seed() {
       coverUrl: 'https://placehold.co/600x800/cc4488/ffeebb?text=Celeste' },
   ]);
 
-  // ── Reviews ─────────────────────────────────────────────────────────────
+  // ── Reviews 
   await Review.bulkCreate([
     { userId: alice.id, gameId: games[0].id, rating: 5, comment: 'Obra-prima absoluta.' },
     { userId: bob.id,   gameId: games[0].id, rating: 4, comment: 'Difícil, mas vale cada hora.' },
@@ -82,7 +77,7 @@ async function seed() {
     { userId: alice.id, gameId: games[10].id, rating: 5, comment: 'Liberdade absurda. Já passei 200h.' },
   ]);
 
-  // ── Favoritos ───────────────────────────────────────────────────────────
+  // ── Favoritos 
   await Favorite.bulkCreate([
     { userId: alice.id, gameId: games[0].id },
     { userId: alice.id, gameId: games[4].id },

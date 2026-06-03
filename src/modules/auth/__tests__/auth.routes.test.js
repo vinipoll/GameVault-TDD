@@ -1,13 +1,5 @@
 /**
  * Testes de integração — /api/auth
- *
- * Estratégia: mockamos o módulo de models (vi.mock) e exercitamos a
- * aplicação Express completa via Supertest. Isso valida:
- *   - middlewares (cors, json parser)
- *   - roteamento
- *   - controllers + chamadas ao service
- *   - tradução de erros do service em status HTTP
- * sem dependência de banco real.
  */
 import request from 'supertest';
 import bcrypt from 'bcryptjs';

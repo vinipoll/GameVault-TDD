@@ -1,9 +1,3 @@
-/**
- * Controller + Router de autenticação.
- *
- * O controller apenas adapta entre HTTP e o UserService, traduzindo erros
- * com `status` em respostas HTTP apropriadas.
- */
 import express from 'express';
 import UserService from '../user/user.service.js';
 import { signToken, authMiddleware } from '../../middleware/auth.js';

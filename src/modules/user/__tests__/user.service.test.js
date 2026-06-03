@@ -5,8 +5,6 @@
  *   - vi.mock()  → substitui o módulo de models por mocks
  *   - vi.fn()    → cria funções espionadas
  *   - vi.spyOn() → monitora chamadas de bcrypt
- *
- * Estes testes NÃO tocam o banco de dados — são puros e rodam em milissegundos.
  */
 import bcrypt from 'bcryptjs';
 

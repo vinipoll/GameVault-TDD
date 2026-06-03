@@ -3,7 +3,7 @@ import mysql from 'mysql2/promise';
 
 async function criarBanco() {
     try {
-        // Puxa as configurações direto do seu arquivo .env
+        // Puxa as configurações direto do .env
         const connection = await mysql.createConnection({
             host: process.env.DB_HOST || 'localhost',
             user: process.env.DB_USER || 'root',

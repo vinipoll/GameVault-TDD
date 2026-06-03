@@ -1,9 +1,4 @@
-/**
- * GameVault — SPA frontend.
- * Arquitetura simples: estado global + funções render por view.
- */
-
-// ── Estado ──────────────────────────────────────────────────────────────
+// ── Estado 
 const state = {
   user: null,
   token: localStorage.getItem('gv_token'),
@@ -29,7 +24,7 @@ try {
   if (u) state.user = JSON.parse(u);
 } catch {}
 
-// ── API helpers ────────────────────────────────────────────────────────
+// ── API helpers 
 const API = '/api';
 
 async function api(path, options = {}) {
@@ -56,7 +51,7 @@ function escapeHtml(str) {
   );
 }
 
-// ── Render principal ───────────────────────────────────────────────────
+// ── Render principal 
 async function render() {
   const root = document.getElementById('app');
   if (!state.token || !state.user) return renderLogin(root);
@@ -81,7 +76,7 @@ async function render() {
 
 function renderSpinner() { return '<div class="spinner"></div>'; }
 
-// ── Login / Register ───────────────────────────────────────────────────
+// ── Login / Register 
 function renderLogin(root) {
   root.innerHTML = `
     <div class="login-wrap">
@@ -140,7 +135,7 @@ function renderLogin(root) {
   };
 }
 
-// ── Header ─────────────────────────────────────────────────────────────
+// ── Header 
 function renderHeader() {
   const isAdmin = state.user.role === 'admin';
   return `
@@ -173,7 +168,7 @@ function attachHeaderEvents() {
   };
 }
 
-// ── Catálogo ───────────────────────────────────────────────────────────
+// ── Catálogo
 async function loadCatalog() {
   if (state.categories.length === 0) {
     state.categories = await api('/categories');
@@ -321,7 +316,7 @@ function attachCatalogEvents() {
   );
 }
 
-// ── Detalhe do jogo ────────────────────────────────────────────────────
+// ── Detalhe do jogo
 async function loadGame() {
   const [game, reviews] = await Promise.all([
     api(`/games/${state.selectedGameId}`),
@@ -419,7 +414,7 @@ function attachGameDetailEvents() {
   };
 }
 
-// ── Admin ──────────────────────────────────────────────────────────────
+// ── Admin
 async function loadAdmin() {
   if (state.adminTab === 'dashboard') {
     state.adminData = await api('/admin/dashboard');
@@ -618,6 +613,4 @@ function showNewGameModal() {
     } catch (err) { toast(err.message, true); }
   };
 }
-
-// ── Boot ───────────────────────────────────────────────────────────────
 render();

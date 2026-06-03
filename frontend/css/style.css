@@ -1,7 +1,4 @@
-/* ╔══════════════════════════════════════════════════════════════════════╗
-   ║  GAMEVAULT — Estética: dark neon arcade / retrô-futurista vault      ║
-   ║  Paleta: preto profundo + verde neon + magenta + acento âmbar         ║
-   ╚══════════════════════════════════════════════════════════════════════╝ */
+/*Paleta: preto profundo + verde neon + magenta + acento âmbar*/
 
 :root {
   --bg-deepest:   #050709;
@@ -43,7 +40,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Fundo: grid CRT + gradiente radial */
+/* Fundo*/
 body::before {
   content: '';
   position: fixed;
@@ -77,7 +74,7 @@ body::after {
   opacity: 0.6;
 }
 
-/* ─── Tipografia ─────────────────────────────────────────────────────── */
+/* Tipografia */
 
 h1, h2, h3, .display {
   font-family: var(--font-display);
@@ -93,7 +90,7 @@ h3 { font-size: 1.35rem; line-height: 1.2; }
 a { color: var(--neon); text-decoration: none; }
 a:hover { text-shadow: 0 0 8px var(--neon); }
 
-/* ─── Layout ─────────────────────────────────────────────────────────── */
+/* Layout */
 
 .container {
   max-width: 1280px;
@@ -101,7 +98,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   padding: 0 24px;
 }
 
-/* ─── Header ─────────────────────────────────────────────────────────── */
+/* Header */
 
 .header {
   position: sticky; top: 0; z-index: 100;
@@ -174,7 +171,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   font-weight: normal;
 }
 
-/* ─── Botões ─────────────────────────────────────────────────────────── */
+/* Botões */
 
 .btn {
   font-family: var(--font-display);
@@ -212,7 +209,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
 .btn.ghost:hover { color: var(--text); border-color: var(--text-dim); background: var(--bg-elev); box-shadow: none; }
 .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
-/* ─── Inputs ─────────────────────────────────────────────────────────── */
+/* Inputs */
 
 .input, .select, .textarea {
   width: 100%;
@@ -241,7 +238,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   margin-bottom: 6px;
 }
 
-/* ─── Cards ──────────────────────────────────────────────────────────── */
+/* Cards */
 
 .card {
   background: var(--bg-card);
@@ -251,7 +248,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   box-shadow: var(--shadow-card);
 }
 
-/* ─── Toast ──────────────────────────────────────────────────────────── */
+/* Toast */
 
 .toast {
   position: fixed;
@@ -274,7 +271,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast.error { border-color: var(--danger); color: var(--danger); box-shadow: 0 0 20px rgba(255, 59, 92, 0.4); }
 
-/* ─── Login screen ───────────────────────────────────────────────────── */
+/* Login screen */
 
 .login-wrap {
   min-height: 100vh;
@@ -351,7 +348,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   margin-bottom: 18px;
 }
 
-/* ─── Hero (página catálogo) ────────────────────────────────────────── */
+/* Hero (página catálogo) */
 
 .hero {
   padding: 64px 0 32px;
@@ -371,7 +368,7 @@ a:hover { text-shadow: 0 0 8px var(--neon); }
   max-width: 600px;
 }
 
-/* ─── Filtros ────────────────────────────────────────────────────────── */
+/* Filtros */
 
 .filters {
   display: flex; gap: 12px; flex-wrap: wrap;

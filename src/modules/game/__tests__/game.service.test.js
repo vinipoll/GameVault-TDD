@@ -59,9 +59,9 @@ describe('GameService.recommendFor — sistema de recomendação', () => {
       { id: 1, toJSON() { return { id: 1, title: 'A' }; } },
       { id: 2, toJSON() { return { id: 2, title: 'B' }; } },
     ]);
-    // duas chamadas a getStats → duas chamadas a Review.findAll
+    // duas chamadas a getStats - duas chamadas a Review.findAll
     Review.findAll
-      .mockResolvedValueOnce([{ rating: 3 }])             // jogo 1 → 3.0
+      .mockResolvedValueOnce([{ rating: 3 }])             // jogo 1 - 3.0
       .mockResolvedValueOnce([{ rating: 5 }, { rating: 5 }]); // jogo 2 → 5.0
 
     const recs = await GameService.recommendFor(123, 10);
