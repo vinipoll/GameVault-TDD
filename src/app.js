@@ -10,6 +10,7 @@ import categoryRoutes from './modules/category/category.routes.js';
 import favoriteRoutes from './modules/favorite/favorite.routes.js';
 import reviewRoutes   from './modules/review/review.routes.js';
 import adminRoutes    from './modules/admin/admin.routes.js';
+import libraryRoutes  from './modules/library/library.routes.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +31,7 @@ export default function createApp() {
   app.use('/api/favorites',  favoriteRoutes);
   app.use('/api/reviews',    reviewRoutes);
   app.use('/api/admin',      adminRoutes);
+  app.use('/api/library',    libraryRoutes);
 
   // Health
   app.get('/api/health', (_req, res) => res.json({ status: 'ok', time: new Date() }));

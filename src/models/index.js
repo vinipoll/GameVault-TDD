@@ -5,6 +5,7 @@ import Category from '../modules/category/category.model.js';
 import Game from '../modules/game/game.model.js';
 import Favorite from '../modules/favorite/favorite.model.js';
 import Review from '../modules/review/review.model.js';
+import Library from '../modules/library/library.model.js';
 
 // ── Associações
 
@@ -30,4 +31,16 @@ Game.hasMany(Review,   { foreignKey: 'gameId', as: 'reviews' });
 Review.belongsTo(User, { foreignKey: 'userId', as: 'user' });
 Review.belongsTo(Game, { foreignKey: 'gameId', as: 'game' });
 
-export { sequelize, User, Category, Game, Favorite, Review };
+// User N ─── N Game (via Library)
+User.belongsToMany(Game, {
+  through: Library, as: 'libraryGames',
+  foreignKey: 'userId', otherKey: 'gameId',
+});
+Game.belongsToMany(User, {
+  through: Library, as: 'libraryOwners',
+  foreignKey: 'gameId', otherKey: 'userId',
+});
+Library.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+Library.belongsTo(Game, { foreignKey: 'gameId', as: 'game' });
+
+export { sequelize, User, Category, Game, Favorite, Review, Library };
